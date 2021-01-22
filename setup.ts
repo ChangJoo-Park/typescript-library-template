@@ -78,6 +78,7 @@ const onSubmit = (prompt, answer) => {
   console.log('Removing node_modules')
 
   rimraf('node_modules', () => {
+    rimraf('assets', () => {})
     rimraf('package-lock.json', () => {})
     rimraf('yarn.lock', () => {})
     rimraf('setup.ts', () => {

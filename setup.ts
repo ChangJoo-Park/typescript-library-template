@@ -82,10 +82,11 @@ const onSubmit = (prompt, answer) => {
   console.log('Removing node_modules')
 
   rimraf('node_modules', () => {
-    console.log('Please run `npm install` or `yarn`')
     rimraf('package-lock.json', () => {})
+    rimraf('yarn.lock', () => {})
     rimraf('setup.ts', () => {
       console.log('\nCongratulations! Start build your lib!')
+      console.log('Please run `npm install` or `yarn`')
     })
   })
 })();

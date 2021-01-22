@@ -15,14 +15,18 @@ cd <package name>
 
 npm install # For setup
 node setup.ts # For fill your new npm with interactive shell
+```
 
+![PREVIEW](assets/preview.png)
+
+```
 npm install # For clean your dependencies
 code . # Or open your favorite editor.
 
 # Start build your own package!
 ```
 
-![PREVIEW](assets/preview.png)
+
 
 
 ## Development this template.

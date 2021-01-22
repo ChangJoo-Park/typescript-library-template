@@ -25,28 +25,18 @@ const questions = [
     type: 'text',
     name: 'github',
     message: 'What is your GitHub username? (for set issues in package.json)'
-  },
-  {
-    type: 'confirm',
-    name: 'analytics',
-    message: 'Thank you for using my template! Can you send me a name and github username for improve?',
-    initial: false
-  },
+  }
 ];
 
 const onSubmit = (prompt, answer) => {
   if (prompt.name === 'name') {
     console.log(`Your package name will be ${answer}`)
   }
-
-  if (prompt.analytics) {
-    console.log('Thanks you for help my template')
-  }
 };
 
 (async () => {
-  const { name, github, analytics } = await prompts(questions, { onSubmit });
-  const canProcess = name !== undefined && github !== undefined && analytics !== undefined
+  const { name, github } = await prompts(questions, { onSubmit });
+  const canProcess = name !== undefined && github !== undefined
   if (!canProcess) {
     console.log('See you later :)');
     process.exit()

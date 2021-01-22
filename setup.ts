@@ -83,8 +83,9 @@ const onSubmit = (prompt, answer) => {
 
   rimraf('node_modules', () => {
     console.log('Please run `npm install` or `yarn`')
+    rimraf('package-lock.json', () => {})
     rimraf('setup.ts', () => {
-      console.log('Congratulations! Start build your lib!')
+      console.log('\nCongratulations! Start build your lib!')
     })
   })
 })();

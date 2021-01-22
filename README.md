@@ -4,6 +4,30 @@ The typescript library template for both node.js and browser. This template base
 
 ## Usage
 
-## Development
+Click **use this template**
+![](https://docs.github.com/assets/images/help/repository/use-this-template-button.png)
+
+Open your terminal and follow this lines
+
+```bash
+git clone <this repository url> <package name>
+cd <package name>
+
+npm install # For setup
+node setup.ts # For fill your new npm with interactive shell
+
+npm install # For clean your dependencies
+code . # Or open your favorite editor.
+
+# Start build your own package!
+```
+
+![PREVIEW](assets/preview.png)
+
+
+## Development this template.
+
 
 ## Contributors
+
+You can first contributor of this template!

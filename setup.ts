@@ -2,7 +2,9 @@ const prompts = require('prompts');
 const kebabCase = require('lodash.kebabcase')
 const validate = require('validate-npm-package-name')
 const fs = require('fs')
+const path = require('path')
 const rimraf = require('rimraf')
+const username = require('username')
 const package = require('./package.json')
 
 const PROJECT_URL_TEMPLATE = `https://github.com/{{github}}/{{name}}`
@@ -12,6 +14,7 @@ const questions = [
     type: 'text',
     name: 'name',
     message: 'What is your Project name? eg. my-first-lib',
+    initial: path.basename(path.resolve(process.cwd())),
     format: (value) => kebabCase(value),
     validate: value => {
       const validated = validate(value.replace(/\s/g, ''))
@@ -24,6 +27,7 @@ const questions = [
   {
     type: 'text',
     name: 'github',
+    initial: username.sync(),
     message: 'What is your GitHub username? (for set issues in package.json)'
   }
 ];
@@ -55,11 +59,13 @@ const onSubmit = (prompt, answer) => {
       package[key] = package[key].replace(originalPackageName, name)
   })
 
+  console.log('Purging packages for setup')
   const needPurge = [
     '@types/lodash.kebabcase',
     '@types/prompts',
     'prompts',
     'validate-npm-package-name',
+    'username'
   ]
 
   needPurge.forEach(key => {

@@ -3,9 +3,9 @@ const kebabCase = require('lodash.kebabcase')
 const validate = require('validate-npm-package-name')
 const fs = require('fs')
 const rimraf = require('rimraf')
+const package = require('./package.json')
 
 const PROJECT_URL_TEMPLATE = `https://github.com/{{github}}/{{name}}`
-const package = require('./package.json')
 
 const questions = [
   {
@@ -69,8 +69,9 @@ const onSubmit = (prompt, answer) => {
     '@types/lodash.kebabcase',
     '@types/prompts',
     'prompts',
-    'validate-npm-package-name'
+    'validate-npm-package-name',
   ]
+
   needPurge.forEach(key => {
     if (package['devDependencies'][key])
       delete package['devDependencies'][key]

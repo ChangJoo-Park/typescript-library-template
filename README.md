@@ -19,7 +19,7 @@ node setup.ts # For fill your new npm with interactive shell
 
 ![PREVIEW](assets/preview.png)
 
-```
+```bash
 npm install # For clean your dependencies
 code . # Or open your favorite editor.
 

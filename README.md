@@ -27,9 +27,7 @@ code . # Or open your favorite editor.
 ```
 
 
-
-
-## Development this template.
+## Development
 
 
 ## Contributors
